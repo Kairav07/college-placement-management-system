@@ -50,8 +50,8 @@ chmod +x run-mac.command
 
 | Role | Email | Password |
 |---|---|---|
-| Student | kairav.gm_2029@woxsen.edu.in | Demo@123 |
-| Admin | admin@woxsen.edu.in | Demo@123 |
+| Student | student@example.com | Demo@123 |
+| Admin | admin@example.com | Demo@123 |
 
 The login page also contains **Open student demo** and **Open admin demo** buttons.
 

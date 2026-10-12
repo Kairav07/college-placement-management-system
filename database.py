@@ -105,8 +105,8 @@ def init_db(force=False):
                 (full_name,email,password_hash,role,department,cgpa,phone)
                 VALUES(?,?,?,?,?,?,?)""",
                 [
-                    ("Placement Administrator", "admin@woxsen.edu.in", hash_password("Demo@123"), "admin", None, None, "9000000000"),
-                    ("Kairav G M", "kairav.gm_2029@woxsen.edu.in", hash_password("Demo@123"), "student", "CSE", 9.27, "9000003020"),
+                    ("Placement Administrator", "admin@example.com", hash_password("Demo@123"), "admin", None, None, "9000000000"),
+                    ("Kairav G M", "student@example.com", hash_password("Demo@123"), "student", "CSE", 9.27, "9000003020"),
                     ("Ananya R", "ananya@woxsen.edu.in", hash_password("Demo@123"), "student", "ECE", 8.40, "9000001111"),
                 ],
             )
@@ -132,7 +132,7 @@ def init_db(force=False):
             )
 
         if db.execute("SELECT COUNT(*) FROM applications").fetchone()[0] == 0:
-            student = db.execute("SELECT user_id FROM users WHERE email=?", ("kairav.gm_2029@woxsen.edu.in",)).fetchone()
+            student = db.execute("SELECT user_id FROM users WHERE email=?", ("student@example.com",)).fetchone()
             job = db.execute("SELECT job_id FROM jobs WHERE company_name='Infosys'").fetchone()
             db.execute(
                 "INSERT INTO applications(student_id,job_id,application_date,status) VALUES(?,?,?,?)",

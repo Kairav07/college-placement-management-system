@@ -149,9 +149,9 @@ def login_screen():
             st.markdown('<div class="demo-note"><strong>Fast demo access</strong><br>Both accounts use password: Demo@123</div>', unsafe_allow_html=True)
             c1, c2 = st.columns(2)
             if c1.button("Open student demo", use_container_width=True):
-                sign_in(db.authenticate("kairav.gm_2029@woxsen.edu.in", "Demo@123"))
+                sign_in(db.authenticate("student@example.com", "Demo@123"))
             if c2.button("Open admin demo", use_container_width=True):
-                sign_in(db.authenticate("admin@woxsen.edu.in", "Demo@123"))
+                sign_in(db.authenticate("admin@example.com", "Demo@123"))
         else:
             st.markdown('<div class="login-title">Create student account</div><div class="login-copy">Your details are used to check job eligibility.</div>', unsafe_allow_html=True)
             with st.form("register_form"):
